@@ -20,7 +20,6 @@ inline cLista<T>::~cLista()
 				delete lista[i];
 		}
 		delete[]lista;
-
 	}
 }
 
