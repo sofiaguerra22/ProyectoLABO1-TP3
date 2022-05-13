@@ -141,11 +141,12 @@
   <ItemGroup>
     <ClCompile Include="cAmbulancia.cpp" />
     <ClCompile Include="cAvion.cpp" />
-    <ClCompile Include="cCentroSalud.cpp" />
+    <ClCompile Include="cCentro.cpp" />
     <ClCompile Include="cDonante.cpp" />
     <ClCompile Include="cHelicoptero.cpp" />
     <ClCompile Include="cINCUCAI.cpp" />
     <ClCompile Include="cLista.cpp" />
+    <ClCompile Include="cListaReceptores.cpp" />
     <ClCompile Include="cOrgano.cpp" />
     <ClCompile Include="cPaciente.cpp" />
     <ClCompile Include="cReceptor.cpp" />
@@ -155,11 +156,12 @@
   <ItemGroup>
     <ClInclude Include="cAmbulancia.h" />
     <ClInclude Include="cAvion.h" />
-    <ClInclude Include="cCentroSalud.h" />
+    <ClInclude Include="cCentro.h" />
     <ClInclude Include="cDonante.h" />
     <ClInclude Include="cHelicoptero.h" />
     <ClInclude Include="cINCUCAI.h" />
     <ClInclude Include="cLista.h" />
+    <ClInclude Include="cListaReceptores.h" />
     <ClInclude Include="cOrgano.h" />
     <ClInclude Include="cPaciente.h" />
     <ClInclude Include="cReceptor.h" />

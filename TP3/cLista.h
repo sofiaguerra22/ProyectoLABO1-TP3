@@ -13,7 +13,7 @@ public:
 	cLista(unsigned int tam = TMAX);
 	~cLista();
 
-	void operator+(T* P); //P= puntero que recibe, método agregar
+	bool operator+(T* P); //P= puntero que recibe, método agregar
 	void ImprimirPacientes(); //imprime el listado de receptores y donantes
 	T* operator-(T* P); //sobrecarga del operator - para quitar elementos
 	T* operator[](unsigned int i); //se le pasa la posición y devuelve el puntero

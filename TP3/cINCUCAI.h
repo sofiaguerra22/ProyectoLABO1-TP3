@@ -4,22 +4,22 @@
 #include <iostream>
 #include "cLista.h"
 #include "cPaciente.h"
-#include "cReceptor.h" //CONSULTAR
+#include "cReceptor.h" 
 #include "cDonante.h"
-#include "cCentroSalud.h"
+#include "cCentro.h"
 using namespace std;
 class cINCUCAI
 {
 	cLista<cReceptor>* ListaReceptores;
 	cLista<cDonante>* ListaDonantes;
-	cLista<cCentroSalud>* ListaCentros;
+	cLista<cCentro>* ListaCentros;
 
 public:
 	cINCUCAI();
 	~cINCUCAI();
-	//RecibirPaciente(cDonante* donante); LLAMA A INGRESAR PACIENTE
-	//IngresarPaciente(); LLAMA A BUSCAR POSIBLES RECEPTORES
-	//cLista<cReceptor>* BuscarPosiblesReceptores(); LLAMA A RECEPTOR FINAL
+	bool RecibirPaciente(cPaciente* paciente); 
+	bool IngresarPaciente(cPaciente* paciente); 
+	cLista<cReceptor>* BuscarPosiblesReceptores(cPaciente* paciente);//LLAMA A RECEPTOR FINAL
 	//cReceptor* ReceptorFinal(); LLAMA A PROTOCOLO 
 	//ProtocoloTransporteTrasplante();
 
