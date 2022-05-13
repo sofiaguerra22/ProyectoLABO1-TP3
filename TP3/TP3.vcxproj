@@ -150,6 +150,7 @@
     <ClCompile Include="cPaciente.cpp" />
     <ClCompile Include="cReceptor.cpp" />
     <ClCompile Include="cVehiculo.cpp" />
+    <ClCompile Include="Enum.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cAmbulancia.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="cPaciente.h" />
     <ClInclude Include="cReceptor.h" />
     <ClInclude Include="cVehiculo.h" />
+    <ClInclude Include="Enum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
