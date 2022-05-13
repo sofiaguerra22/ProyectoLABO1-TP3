@@ -48,7 +48,7 @@
     <ClCompile Include="cVehiculo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\TP3 _solución\LABO1_TP3\LABO1_TP3\Enum.cpp">
+    <ClCompile Include="Enum.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,7 +86,7 @@
     <ClInclude Include="cVehiculo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\TP3 _solución\LABO1_TP3\LABO1_TP3\Enum.h">
+    <ClInclude Include="Enum.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

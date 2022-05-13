@@ -12,3 +12,4 @@ string OrganoToString(eOrgano organo);
 string TipoSangreToString(eTipoSangre sangre);
 int OrganoToInt(eOrgano organo);
 
+
