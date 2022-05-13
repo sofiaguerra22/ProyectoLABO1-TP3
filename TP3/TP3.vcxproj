@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\TP3 _solución\LABO1_TP3\LABO1_TP3\Enum.cpp" />
     <ClCompile Include="cAmbulancia.cpp" />
     <ClCompile Include="cAvion.cpp" />
     <ClCompile Include="cCentroSalud.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="cVehiculo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\TP3 _solución\LABO1_TP3\LABO1_TP3\Enum.h" />
     <ClInclude Include="cAmbulancia.h" />
     <ClInclude Include="cAvion.h" />
     <ClInclude Include="cCentroSalud.h" />
