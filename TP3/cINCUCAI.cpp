@@ -4,7 +4,7 @@ cINCUCAI::cINCUCAI()
 {
 	cLista<cReceptor>* ListaReceptores = new cLista<cReceptor>;
 	cLista<cDonante>* ListaDonantes = new cLista<cDonante>;
-	cLista<cCentroSalud>* ListaCentros = new cLista<cCentroSalud>;
+	cLista<cCentro>* ListaCentros = new cLista<cCentro>;
 }
 
 cINCUCAI::~cINCUCAI()
@@ -33,4 +33,40 @@ cINCUCAI::~cINCUCAI()
 		}
 		delete[]ListaCentros;
 	}
+}
+
+bool cINCUCAI::RecibirPaciente(cPaciente* paciente)
+{
+	if (paciente != NULL)
+	{
+		return true;
+		IngresarPaciente(paciente);
+	}
+	return false;
+}
+
+bool cINCUCAI::IngresarPaciente(cPaciente* paciente)
+{
+	cDonante* donante_aux = dynamic_cast<cDonante*>(paciente);
+	cReceptor* receptor_aux = dynamic_cast<cReceptor*>(paciente);
+	if (donante_aux != NULL)
+	{
+		if (((*ListaDonantes) + donante_aux) == true)
+		{
+			BuscarPosiblesReceptores(donante_aux);
+			return true;
+		}
+	}
+	if (receptor_aux != NULL)
+	{
+		return (*ListaReceptores) + receptor_aux;
+	}
+	return false;
+}
+
+cLista<cReceptor>* cINCUCAI::BuscarPosiblesReceptores(cPaciente* paciente)
+{
+	cLista<cReceptor>* sublistaReceptores = new cLista<cReceptor>;
+
+	
 }

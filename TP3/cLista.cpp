@@ -25,7 +25,7 @@ inline cLista<T>::~cLista()
 }
 
 template<class T>
-inline void cLista<T>::operator+(T* P) // CONSULTAR SI LO HACEMOS BOOL
+inline bool cLista<T>::operator+(T* P) // AGREGAR CONDICIONES DE CONSIGNA 
 {
 	if (ca < ct) {
 		lista[ca++] = P;

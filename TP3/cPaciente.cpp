@@ -1,6 +1,6 @@
 #include "cPaciente.h"
 
-cPaciente::cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentroSalud* _centroAsociado)
+cPaciente::cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado)
 {
 	this->centroAsociado = _centroAsociado;
 	this->nombre = _nombre;

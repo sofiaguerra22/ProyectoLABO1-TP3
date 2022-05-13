@@ -6,7 +6,7 @@ class cReceptor :
     public cPaciente
 {
     //fecha de agregacion
-  // cLista<cReceptor>* ListaEspera; //CONSULTAR
+   cLista<cReceptor>* ListaEspera; 
    cOrgano* organo;
    int prioridad; //1=Verde, 2=Amarillo, 3=Rojo
    int patologia; //relacionado con el enum del organo
@@ -15,6 +15,6 @@ class cReceptor :
 public:
     cReceptor(bool _estado, cOrgano* _organo);
     ~cReceptor();
-    int setPrioridad();
+    int setPrioridad(); //se necesita ctime
 };
 

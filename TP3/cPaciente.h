@@ -4,7 +4,7 @@
 #include "cOrgano.h"
 #include <ctime>
 #include "Enum.h"
-#include "cCentroSalud.h"
+#include "cCentro.h"
 using namespace std;
 class cPaciente
 {
@@ -12,10 +12,10 @@ class cPaciente
 	char sexo;
 	eTipoSangre sangre;
 	//fecha nacimiento CONSULTAR
-	cCentroSalud* centroAsociado;
+	cCentro* centroAsociado;
 
 public:
-	cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentroSalud* _centroAsociado);
+	cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado);
 	virtual ~cPaciente();
 };
 
