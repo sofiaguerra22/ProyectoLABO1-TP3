@@ -5,17 +5,18 @@
 #include <ctime>
 #include "Enum.h"
 #include "cCentro.h"
+#include "cFecha.h"
 using namespace std;
 class cPaciente
 {
 	string nombre, tel;
 	char sexo;
 	eTipoSangre sangre;
-	//fecha nacimiento CONSULTAR
+	cFecha* fechaNacimiento;
 	cCentro* centroAsociado;
 
 public:
-	cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado);
+	cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento);
 	virtual ~cPaciente();
 };
 

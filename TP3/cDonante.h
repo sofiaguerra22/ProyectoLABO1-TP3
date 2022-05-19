@@ -4,13 +4,14 @@
 #include <ctime>
 using namespace std;
 class cDonante :
-    public cPaciente
-{
-    //fecha y hora de fallecimiento CONSULTAR
-    //fecha y hora de comienzo de ablacion
+public cPaciente{
+private:
+    cFecha* fechaComienzoAblacion;
+    cFecha* fechaFallecimiento;
     cLista<cOrgano>* ListaOrganos;
 
-    cDonante();
+    cDonante(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento, cFecha* _fechaComienzoAblacion, cFecha* _fechaFallecimiento);
     ~cDonante();
-};
+    };
+
 
