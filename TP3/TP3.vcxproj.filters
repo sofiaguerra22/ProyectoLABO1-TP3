@@ -54,6 +54,9 @@
     <ClCompile Include="cListaReceptores.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="cFecha.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cAmbulancia.h">
@@ -93,6 +96,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="cListaReceptores.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="cFecha.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
