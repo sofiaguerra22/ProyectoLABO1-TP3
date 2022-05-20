@@ -15,7 +15,7 @@ public:
         cListaReceptores* subLista = new cListaReceptores(TMAX);
         cLista<cOrgano>* ListaOrganos = donante->ListaOrganos;
         int i, j, cont = 0;
-        for (i = 0; i < donante->ListaOrganos->getCA(); i++) //recorre cada órgano del donante
+        for (i = 0; i < (donante->ListaOrganos->getCA()); i++) //recorre cada órgano del donante
         {
             for (j = 0; j < ca; j++) //ca es la cantidad actual de receptores
             {
@@ -96,6 +96,7 @@ public:
                 return (*listaaux1)[0];
             }
         }
+        return NULL;
     };
     void reSetDonanteAsignado(cReceptor* receptor)
     {

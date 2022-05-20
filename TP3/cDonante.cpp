@@ -11,7 +11,7 @@ cDonante::~cDonante()
 {
 	if (ListaOrganos != NULL)
 	{
-		for (int i = 0; i < ListaOrganos->getCA(); i++)
+		for (int i = 0; i < (ListaOrganos->getCA()); i++)
 		{
 			ListaOrganos[i] = NULL;
 		}

@@ -153,6 +153,7 @@
     <ClCompile Include="cReceptor.cpp" />
     <ClCompile Include="cVehiculo.cpp" />
     <ClCompile Include="Enum.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cAmbulancia.h" />

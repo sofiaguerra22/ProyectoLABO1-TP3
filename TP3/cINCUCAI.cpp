@@ -2,9 +2,9 @@
 
 cINCUCAI::cINCUCAI()
 {
-	cLista<cReceptor>* ListaReceptores = new cLista<cReceptor>;
-	cLista<cDonante>* ListaDonantes = new cLista<cDonante>;
-	cLista<cCentro>* ListaCentros = new cLista<cCentro>;
+	this->ListaReceptores = new cListaReceptores(TMAX);
+	this->ListaDonantes = new cLista<cDonante>;
+	this->ListaCentros = new cLista<cCentro>;
 }
 
 cINCUCAI::~cINCUCAI()
@@ -73,6 +73,7 @@ cListaReceptores* cINCUCAI::BuscarPosiblesReceptores(cDonante* paciente) //agreg
 		ReceptorFinal(sublistaReceptores);
 		return sublistaReceptores;
 	}
+	return NULL;
 	
 }
 
