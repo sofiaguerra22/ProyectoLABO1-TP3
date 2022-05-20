@@ -1,9 +1,9 @@
 #include "cHelicoptero.h"
 
-cHelicoptero::cHelicoptero(string _ID):cVehiculo()
+cHelicoptero::cHelicoptero(string _ID):cVehiculo(_ID)
 {
 	this->onomatopeya = "taca-taca-taca";
-	this->ID = _ID;
+
 }
 
 cHelicoptero::~cHelicoptero()

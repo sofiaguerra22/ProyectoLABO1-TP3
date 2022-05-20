@@ -6,12 +6,13 @@ using namespace std;
 template <class T> 
 class cLista
 {
+protected:
 	T** lista;
 	unsigned int ca, ct;
 
 public:
 	cLista(unsigned int tam = TMAX);
-	~cLista();
+	virtual ~cLista();
 
 	bool operator+(T* P); //P= puntero que recibe, método agregar
 	void ImprimirPacientes(); //imprime el listado de receptores y donantes
@@ -19,6 +20,7 @@ public:
 	T* operator[](unsigned int i); //se le pasa la posición y devuelve el puntero
 	unsigned int getItemPos(int cod);
 	unsigned int getCA() { return ca; };
+	cLista<T>* getLista() { return lista; };
 	//falta sobrecarga ostream
 
 };

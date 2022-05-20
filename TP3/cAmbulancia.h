@@ -4,7 +4,6 @@ class cAmbulancia :
     public cVehiculo
 {
     string onomatopeya;
-    string ID;
 public:
     cAmbulancia(string _ID);
     ~cAmbulancia();

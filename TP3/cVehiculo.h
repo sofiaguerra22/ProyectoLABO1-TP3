@@ -3,10 +3,11 @@
 #include <stdio.h>
 #include <iostream>
 using namespace std;
-class cVehiculo//no tiene atributos sino metodos
+class cVehiculo
 {
+	string ID;
 public:
-	cVehiculo();
+	cVehiculo(string _ID);
 	virtual ~cVehiculo();
 };
 

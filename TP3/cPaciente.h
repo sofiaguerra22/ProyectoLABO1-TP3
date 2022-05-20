@@ -9,6 +9,7 @@
 using namespace std;
 class cPaciente
 {
+protected:
 	string nombre, tel;
 	char sexo;
 	eTipoSangre sangre;

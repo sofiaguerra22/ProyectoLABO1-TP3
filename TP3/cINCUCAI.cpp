@@ -64,9 +64,19 @@ bool cINCUCAI::IngresarPaciente(cPaciente* paciente)
 	return false;
 }
 
-cLista<cReceptor>* cINCUCAI::BuscarPosiblesReceptores(cPaciente* paciente)
+cLista<cReceptor>* cINCUCAI::BuscarPosiblesReceptores(cDonante* paciente) //agregar la desiguakdad a null y otras verificaciones 
 {
 	cLista<cReceptor>* sublistaReceptores = new cLista<cReceptor>;
+	sublistaReceptores = ListaReceptores->ReceptoresCompatibles(paciente);
+	if (sublistaReceptores != NULL)
+	{
+		ReceptorFinal(sublistaReceptores);
+		return sublistaReceptores;
+	}
+	
+}
 
+cReceptor* cINCUCAI::ReceptorFinal(cLista<cReceptor>* listaReceptores)
+{
 	
 }

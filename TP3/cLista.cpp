@@ -44,7 +44,8 @@ inline T* cLista<T>::operator-(T* P)
 {
 	T* aux = new T();
 	aux = P;
-	unsigned int pos = getItemPos(P->getCodigo());
+	int cod = P->getCodigo();
+	unsigned int pos = getItemPos(cod);
 	if (cod != -1)
 	{
 		ca--;

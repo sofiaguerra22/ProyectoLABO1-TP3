@@ -2,6 +2,7 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
+#include <ctime>
 using namespace std;
 
 class cFecha

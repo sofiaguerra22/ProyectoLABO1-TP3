@@ -1,9 +1,9 @@
 #include "cAmbulancia.h"
 
-cAmbulancia::cAmbulancia(string _ID):cVehiculo()
+cAmbulancia::cAmbulancia(string _ID):cVehiculo(_ID)
 {
 	onomatopeya = "iuiuiuiuiu";
-	this->ID = _ID;
+
 }
 
 cAmbulancia::~cAmbulancia()

@@ -17,5 +17,5 @@ cReceptor::~cReceptor()
 int cReceptor::setPrioridad()
 {
 	//dependiendo la edad, el estado y su posicion en la lista
-
+	return 0;
 }

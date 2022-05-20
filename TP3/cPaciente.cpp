@@ -12,4 +12,5 @@ cPaciente::cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangr
 
 cPaciente::~cPaciente()
 {
+	
 }
