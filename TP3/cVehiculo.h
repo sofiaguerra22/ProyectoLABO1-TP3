@@ -6,8 +6,10 @@ using namespace std;
 class cVehiculo
 {
 	string ID;
+	string tipo;
 public:
 	cVehiculo(string _ID);
 	virtual ~cVehiculo();
+	string getTipo() { return tipo; };
 };
 

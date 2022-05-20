@@ -32,7 +32,7 @@ public:
 #pragma region Metodos
 
 	//Calcula el numero de días entre dos fechas
-	static int DiasEntreFechas(cFecha* inicio, cFecha* fin);
+	static int HorasEntreFechas(cFecha* inicio, cFecha* fin);
 
 
 	//Cambia la fecha a la fecha actual
@@ -41,14 +41,14 @@ public:
 	//Verifica que la fecha esté completa
 	bool FechaCompleta();
 
-	//Devuelve la fecha actual en forma de string
-	string To_string();
+	////Devuelve la fecha actual en forma de string
+	//string To_string();
 
-	// Imprime fecha
-	void ImprimirFecha();
+	//// Imprime fecha
+	//void ImprimirFecha();
 
-	// Determina si las dos fechas tiene el mismo dia
-	static bool MismoDia(cFecha* fecha1, cFecha* fecha2);
+	//// Determina si las dos fechas tiene el mismo dia
+	//static bool MismoDia(cFecha* fecha1, cFecha* fecha2);
 
 #pragma endregion
 
@@ -76,5 +76,27 @@ public:
 		return !(*this == otra);
 	}
 
+	int getAnio() { return fecha.tm_year; };
+	int getMes() { return fecha.tm_mon; };
+	int getDia() { return fecha.tm_wday; };
+
 #pragma endregion
+	int Edad(int dia, int mes, int anio)
+	{
+		cFecha* fechanac = new cFecha(dia, mes, anio);
+		if (fechanac->FechaCompleta() == true)
+		{
+			struct tm date = { 0 };
+			date.tm_year = anio - 1900;
+			date.tm_mon = mes - 1;
+			date.tm_mday = dia;
+			time_t normal = mktime(&date);
+			time_t current;
+			time(&current);
+			int edad = (difftime(current, normal) + 86400L / 2) / 86400L;
+			return edad / 365;
+		}
+		else return -1;
+		
+	}
 };

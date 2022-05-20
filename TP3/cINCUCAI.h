@@ -2,12 +2,13 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
-#include "cLista.h"
+//#include "cLista.h"
 #include "cListaReceptores.h"
 #include "cPaciente.h"
-#include "cReceptor.h" 
-#include "cDonante.h"
-#include "cCentro.h"
+//#include "cReceptor.h" 
+//#include "cDonante.h"
+//#include "cCentro.h"
+#include <math.h>
 using namespace std;
 class cINCUCAI
 {
@@ -20,9 +21,10 @@ public:
 	~cINCUCAI();
 	bool RecibirPaciente(cPaciente* paciente); 
 	bool IngresarPaciente(cPaciente* paciente); 
-	cLista<cReceptor>* BuscarPosiblesReceptores(cDonante* paciente);//LLAMA A RECEPTOR FINAL
-	cReceptor* ReceptorFinal(cLista<cReceptor>* listaReceptores); //LLAMA A PROTOCOLO 
-	//ProtocoloTransporteTrasplante();
+	cListaReceptores* BuscarPosiblesReceptores(cDonante* paciente);//LLAMA A RECEPTOR FINAL
+	cReceptor* ReceptorFinal(cListaReceptores* sublistaReceptores); //LLAMA A PROTOCOLO 
+	bool ProtocoloTransporteTrasplante(cReceptor* receptor);
+	void ResultadoTransplante(bool exito, cReceptor* receptor);
 
 };
 

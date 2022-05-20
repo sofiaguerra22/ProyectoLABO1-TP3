@@ -43,7 +43,7 @@ cFecha::cFecha(int d, int m, int a, int hs, int min) {
 cFecha::~cFecha() {
 }
 
-int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
+int cFecha::HorasEntreFechas(cFecha* inicio, cFecha* fin)
 {
 	int dif = 0;
 	time_t aux_inicio = mktime(&(inicio->fecha)); //paso las fechas a segundos
@@ -57,7 +57,7 @@ int cFecha::DiasEntreFechas(cFecha* inicio, cFecha* fin)
 			throw exception("Las fechas no son válidas");
 		else
 		{
-			dif = difftime(aux_fin, aux_inicio) / (60); //calculo la diferencia de tiempo en segundos, transforma a minutos, y la devuelvo
+			dif = difftime(aux_fin, aux_inicio) / (3600); //calculo la diferencia en horas
 			return dif;
 		}
 	}
@@ -72,6 +72,8 @@ void cFecha::SetHoy()
 	fecha.tm_mday = aux->tm_mday;
 	fecha.tm_mon = aux->tm_mon;
 	fecha.tm_year = aux->tm_year;
+	fecha.tm_hour = aux->tm_hour;
+	fecha.tm_min = aux->tm_min;
 }
 
 bool cFecha::FechaCompleta()
@@ -81,21 +83,21 @@ bool cFecha::FechaCompleta()
 	return false;
 }
 
-string cFecha::To_string()
-{
-	return to_string(fecha.tm_year + 1900) +
-		"/" + to_string(fecha.tm_mon + 1) +
-		"/" + to_string(fecha.tm_mday);
-}
-
-void cFecha::ImprimirFecha() {
-	cout << To_string() << endl;;
-}
-
-bool cFecha::MismoDia(cFecha* fecha1, cFecha* fecha2)
-{
-	if (fecha1->fecha.tm_wday == fecha2->fecha.tm_wday)
-		return true;
-	else
-		return false;
-}
+//string cFecha::To_string()
+//{
+//	return to_string(fecha.tm_year + 1900) +
+//		"/" + to_string(fecha.tm_mon + 1) +
+//		"/" + to_string(fecha.tm_mday);
+//}
+//
+//void cFecha::ImprimirFecha() {
+//	cout << To_string() << endl;;
+//}
+//
+//bool cFecha::MismoDia(cFecha* fecha1, cFecha* fecha2)
+//{
+//	if (fecha1->fecha.tm_wday == fecha2->fecha.tm_wday)
+//		return true;
+//	else
+//		return false;
+//}

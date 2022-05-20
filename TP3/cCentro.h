@@ -1,9 +1,18 @@
 #pragma once
-#include "cVehiculo.h"
+//#include "cVehiculo.h"
 #include <string>
 #include <iostream>
 #include "cLista.h"
+//#include "cDonante.h"
+//#include "cReceptor.h"
+#include "cAmbulancia.h"
+#include "cHelicoptero.h"
+#include "cAvion.h"
+#include <math.h>
 using namespace std;
+class cReceptor;
+class cDonante;
+class cOrgano;
 class cCentro
 {
 	string nombre, direccion, provincia, telefono;
@@ -12,8 +21,11 @@ class cCentro
 public:
 	cCentro(string _nombre, string _direccion, string _provincia, string _telefono, int _partido);
 	~cCentro();
-	void AsignarVehiculo();
-	void IniciarAblacion();
-	void RealizarTrasplante();
+	cVehiculo* AsignarVehiculo(cDonante* donante, cReceptor* receptor);
+	bool IniciarAblacion(cReceptor* receptor, cOrgano* _organo, cVehiculo* vehiculoAsignado);
+	bool RealizarTransporte(cVehiculo* vehiculo, cReceptor* receptor);
+	bool RealizarTrasplante(cReceptor* receptor);
+	string getProvincia() { return provincia; };
+	int getPartido() { return partido; };
 };
 

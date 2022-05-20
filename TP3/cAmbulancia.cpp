@@ -2,8 +2,8 @@
 
 cAmbulancia::cAmbulancia(string _ID):cVehiculo(_ID)
 {
-	onomatopeya = "iuiuiuiuiu";
-
+	this->onomatopeya = "iuiuiuiuiu";
+	this->tipo = "ambulancia";
 }
 
 cAmbulancia::~cAmbulancia()

@@ -64,9 +64,9 @@ bool cINCUCAI::IngresarPaciente(cPaciente* paciente)
 	return false;
 }
 
-cLista<cReceptor>* cINCUCAI::BuscarPosiblesReceptores(cDonante* paciente) //agregar la desiguakdad a null y otras verificaciones 
+cListaReceptores* cINCUCAI::BuscarPosiblesReceptores(cDonante* paciente) //agregar la desiguakdad a null y otras verificaciones 
 {
-	cLista<cReceptor>* sublistaReceptores = new cLista<cReceptor>;
+	cListaReceptores* sublistaReceptores = new cListaReceptores(TMAX);
 	sublistaReceptores = ListaReceptores->ReceptoresCompatibles(paciente);
 	if (sublistaReceptores != NULL)
 	{
@@ -76,7 +76,42 @@ cLista<cReceptor>* cINCUCAI::BuscarPosiblesReceptores(cDonante* paciente) //agre
 	
 }
 
-cReceptor* cINCUCAI::ReceptorFinal(cLista<cReceptor>* listaReceptores)
+cReceptor* cINCUCAI::ReceptorFinal(cListaReceptores* sublistaReceptores)
 {
-	
+	cReceptor* receptorFinal = sublistaReceptores->ReceptorDefinitivo();
+	ProtocoloTransporteTrasplante(receptorFinal);
+	return receptorFinal;
+}
+
+bool cINCUCAI::ProtocoloTransporteTrasplante(cReceptor* receptor) //ver de cambiar a void
+{
+	cCentro* centroReceptor = receptor->getCentro();
+	cDonante* donanteAsignado = receptor->getDonante();
+	cCentro* centroDonante = donanteAsignado->getCentro();
+	cOrgano* organoAdonar = receptor->getOrgano();
+	cVehiculo* vehiculoAsigando = centroReceptor->AsignarVehiculo(donanteAsignado, receptor);
+	if (vehiculoAsigando != NULL)
+	{
+		if (centroReceptor->IniciarAblacion(receptor, organoAdonar, vehiculoAsigando) == true)
+		{
+			if (centroDonante->RealizarTransporte(vehiculoAsigando, receptor) == true)
+			{
+				ResultadoTransplante((centroReceptor->RealizarTrasplante(receptor)),receptor);
+			}
+		}
+	}
+	return false;
+}
+
+void cINCUCAI::ResultadoTransplante(bool exito, cReceptor* receptor)
+{
+	if (exito == true)
+	{
+		(*ListaReceptores) - receptor;
+	}
+	else if (exito == false)
+	{
+		receptor->prioridad = 3;
+		receptor->estado = false;
+	}
 }

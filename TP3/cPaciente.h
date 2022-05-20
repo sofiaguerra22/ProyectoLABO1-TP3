@@ -7,6 +7,7 @@
 #include "cCentro.h"
 #include "cFecha.h"
 using namespace std;
+//class cCentro;
 class cPaciente
 {
 protected:
@@ -19,5 +20,7 @@ protected:
 public:
 	cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento);
 	virtual ~cPaciente();
+	string getProvincia() { return centroAsociado->getProvincia(); };
+	int getPartido() { return centroAsociado->getPartido(); };
 };
 

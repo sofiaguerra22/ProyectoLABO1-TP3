@@ -4,7 +4,4 @@ cListaReceptores::~cListaReceptores()
 {
 }
 
-cLista<cReceptor>* cListaReceptores::ReceptoresCompatibles(cDonante* donante)
-{
-    
-}
+

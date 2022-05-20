@@ -7,6 +7,7 @@ class cReceptor :
 {
    cFecha* fechaAgregacion;
    cLista<cReceptor>* ListaEspera; 
+   cDonante* donanteAsignado;
    cOrgano* organo;
    int prioridad; //1=Verde, 2=Amarillo, 3=Rojo
    int patologia; //relacionado con el enum del organo
@@ -14,9 +15,13 @@ class cReceptor :
 
 public:
     friend class cListaReceptores;
-    cReceptor(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento, bool _estado, cOrgano* _organo,cFecha *fechaAgregacion);
+    friend class cCentro;
+    friend class cINCUCAI;
+    cReceptor(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento, bool _estado, cOrgano* _organo);
     ~cReceptor();
+    cCentro* getCentro() { return centroAsociado; };
     cOrgano* getOrgano() { return organo; };
-    int setPrioridad(); //se necesita ctime
+    cDonante* getDonante() { return donanteAsignado; };
+    void setPrioridad(); 
 };
 

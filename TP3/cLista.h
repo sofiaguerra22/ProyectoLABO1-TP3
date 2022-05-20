@@ -20,7 +20,7 @@ public:
 	T* operator[](unsigned int i); //se le pasa la posición y devuelve el puntero
 	unsigned int getItemPos(int cod);
 	unsigned int getCA() { return ca; };
-	cLista<T>* getLista() { return lista; };
+	//cLista<T>* getLista() { return lista; };
 	//falta sobrecarga ostream
 
 };

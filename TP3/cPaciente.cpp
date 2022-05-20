@@ -1,4 +1,5 @@
 #include "cPaciente.h"
+//#include "cCentro.h"
 
 cPaciente::cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento)
 {
