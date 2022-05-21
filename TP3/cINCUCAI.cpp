@@ -59,7 +59,8 @@ bool cINCUCAI::IngresarPaciente(cPaciente* paciente)
 	}
 	if (receptor_aux != NULL)
 	{
-		return (*ListaReceptores) + receptor_aux;
+		if (((*ListaReceptores) + receptor_aux) == true)
+			return true;
 	}
 	return false;
 }
@@ -80,9 +81,15 @@ cListaReceptores* cINCUCAI::BuscarPosiblesReceptores(cDonante* paciente) //agreg
 cReceptor* cINCUCAI::ReceptorFinal(cListaReceptores* sublistaReceptores)
 {
 	cReceptor* receptorFinal = sublistaReceptores->ReceptorDefinitivo();
-	ProtocoloTransporteTrasplante(receptorFinal);
-	return receptorFinal;
+	if (receptorFinal != NULL)
+	{
+		ProtocoloTransporteTrasplante(receptorFinal);
+		delete sublistaReceptores;
+		return receptorFinal;
+	}
+	return NULL;
 }
+
 
 bool cINCUCAI::ProtocoloTransporteTrasplante(cReceptor* receptor) //ver de cambiar a void
 {

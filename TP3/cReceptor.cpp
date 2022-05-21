@@ -5,7 +5,7 @@ cReceptor::cReceptor(string _nombre, string _tel, char _sexo, eTipoSangre _sangr
 	this->organo = _organo;
 	this->estado = _estado;
 	this->patologia = organo->getNumOrgano();
-	cLista<cReceptor>* listaEspera = new cLista<cReceptor>;
+	this->ListaEspera = new cLista<cReceptor>;
 	fechaNacimiento = new cFecha();
 	fechaNacimiento = _fechaNacimiento;
 	fechaAgregacion = new cFecha();
@@ -17,6 +17,22 @@ cReceptor::cReceptor(string _nombre, string _tel, char _sexo, eTipoSangre _sangr
 
 cReceptor::~cReceptor()
 {
+	if (ListaEspera != NULL)
+	{
+		for (int i = 0; i < ListaEspera->getCA(); i++)
+		{
+			ListaEspera[i] = NULL;
+		}
+		delete[] ListaEspera;
+	}
+	if (fechaNacimiento != NULL)
+		delete fechaNacimiento;
+	if (fechaAgregacion != NULL)
+		delete fechaAgregacion;
+	if (organo != NULL)
+		delete organo;
+	if (centroAsociado != NULL)
+		delete centroAsociado;
 }
 
 void cReceptor::setPrioridad()

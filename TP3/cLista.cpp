@@ -16,8 +16,7 @@ inline cLista<T>::~cLista()
 
 		for (int i = 0; i < ca; i++)
 		{
-			if (lista[i] != NULL)
-				delete lista[i];
+			lista[i] = NULL;
 		}
 		delete[]lista;
 	}

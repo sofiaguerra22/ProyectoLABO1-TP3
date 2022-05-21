@@ -70,7 +70,6 @@ bool cCentro::IniciarAblacion(cReceptor* receptor, cOrgano* _organo, cVehiculo* 
 		return true;
 	}
 	return false;
-	//RealizarTransporte(vehiculoAsignado, receptor);
 }
 
 bool cCentro::RealizarTransporte(cVehiculo* vehiculo, cReceptor* receptor)
@@ -109,11 +108,16 @@ bool cCentro::RealizarTrasplante(cReceptor* receptor)
 		int random = 1 + (rand() % 100);
 		if (random % 2 == 0)
 		{
+			delete fechaActual;
 			return true;
 		}
 		if (random % 2 != 0)
+		{
+			delete fechaActual;
 			return false;
+		}
 	}
+	delete fechaActual;
 	return false;
 }
 void cCentro::ImprimirDatos()
