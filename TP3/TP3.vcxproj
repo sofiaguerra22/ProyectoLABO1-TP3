@@ -147,7 +147,6 @@
     <ClCompile Include="cHelicoptero.cpp" />
     <ClCompile Include="cINCUCAI.cpp" />
     <ClCompile Include="cLista.cpp" />
-    <ClCompile Include="cListaReceptores.cpp" />
     <ClCompile Include="cOrgano.cpp" />
     <ClCompile Include="cPaciente.cpp" />
     <ClCompile Include="cReceptor.cpp" />
@@ -170,6 +169,7 @@
     <ClInclude Include="cReceptor.h" />
     <ClInclude Include="cVehiculo.h" />
     <ClInclude Include="Enum.h" />
+    <ClInclude Include="ListaDonantes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

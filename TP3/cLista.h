@@ -24,18 +24,19 @@ public:
 	T* Quitar(T* P);
 	bool Eliminar(T* P);
 	T* BuscarenPos(int i);
-	//cLista<T>* getLista() { return lista; };
-	//falta sobrecarga ostream
 
 };
 
 template<class T>
  cLista<T>::cLista(unsigned int tam)
 {
+	this->ca = 0;
 	this->ct = tam; //cantidad total es igual al tamaño
 
-	for (int i = 0; i < ct; i++)
+	for (unsigned int i = 0; i < ct; i++)
+	{
 		lista[i] = NULL;
+	}
 }
 
 template<class T>
@@ -43,7 +44,7 @@ template<class T>
 {
 	if (lista != NULL) {
 
-		for (int i = 0; i < ca; i++)
+		for (unsigned int i = 0; i < ca; i++)
 		{
 			lista[i] = NULL;
 		}
@@ -52,13 +53,19 @@ template<class T>
 }
 
 template<class T>
- bool cLista<T>::operator+(T* P) // AGREGAR CONDICIONES DE CONSIGNA 
+ bool cLista<T>::operator+(T* P) // al agregar se asegura que el elemento no exista en la lista
 {
-	if (ca < ct) {
-		lista[ca++] = P;
-	}
-	else throw new exception("No hay tamaño suficiente para agregar el item");
-	return true;
+	 int i = 0;
+	 if (ca < ct && P != NULL) {
+		 for (unsigned i = 0; i < ca + 1; i++) //la última posicion va a ser null asi que no puede ser igual
+		 {
+			 if (lista[i] == P)
+				 break;
+		 }
+	 }
+	 if (i != 0 && i != ca + 1)
+		 return true;
+	 return false;
 }
 
 template<class T>

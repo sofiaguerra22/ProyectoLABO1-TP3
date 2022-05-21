@@ -1,6 +1,6 @@
 #include "cReceptor.h"
 
-cReceptor::cReceptor(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento,bool _estado, cOrgano* _organo):cPaciente(_nombre, _tel, _sexo, _sangre, _centroAsociado, _fechaNacimiento)
+cReceptor::cReceptor(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento, string _dni, bool _estado, cOrgano* _organo) :cPaciente(_nombre, _tel, _sexo, _sangre, _centroAsociado, _fechaNacimiento, _dni)
 {
 	this->organo = _organo;
 	this->estado = _estado;
@@ -19,7 +19,7 @@ cReceptor::~cReceptor()
 {
 	if (ListaEspera != NULL)
 	{
-		for (int i = 0; i < ListaEspera->getCA(); i++)
+		for (unsigned int i = 0; i < ListaEspera->getCA(); i++)
 		{
 			ListaEspera[i] = NULL;
 		}
@@ -41,7 +41,7 @@ void cReceptor::setPrioridad()
 	int mes = fechaNacimiento->getMes();
 	int anio = fechaNacimiento->getAnio();
 	int edad = fechaNacimiento->Edad(dia, mes, anio);
-	for (int i = 0; i < ListaEspera->getCA(); i++)
+	for (unsigned int i = 0; i < ListaEspera->getCA(); i++)
 	{
 		if (edad != -1)
 		{
@@ -71,4 +71,11 @@ void cReceptor::ImprimirDatos()
 string cReceptor::toString()
 {
 	return "Patologia:" + to_string(patologia) + "\nPrioridad:" + to_string(prioridad);
+}
+
+bool cReceptor::operator==(cDonante* donante)
+{
+	if (sangre == donante->getTipoSangre())
+		return true;
+	return false;
 }

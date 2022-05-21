@@ -11,7 +11,7 @@ cINCUCAI::~cINCUCAI()
 {
 	if (ListaReceptores != NULL)
 	{
-		for (int i = 0; i < ListaReceptores->getCA(); i++)
+		for (unsigned int i = 0; i < ListaReceptores->getCA(); i++)
 		{
 			ListaReceptores[i] = NULL;
 		}
@@ -19,7 +19,7 @@ cINCUCAI::~cINCUCAI()
 	}
 	if (ListaDonantes != NULL)
 	{
-		for (int i = 0; i < ListaDonantes->getCA(); i++)
+		for (unsigned int i = 0; i < ListaDonantes->getCA(); i++)
 		{
 			ListaDonantes[i] = NULL;
 		}
@@ -27,7 +27,7 @@ cINCUCAI::~cINCUCAI()
 	}
 	if (ListaCentros != NULL)
 	{
-		for (int i = 0; i < ListaCentros->getCA(); i++)
+		for (unsigned int i = 0; i < ListaCentros->getCA(); i++)
 		{
 			ListaCentros[i] = NULL;
 		}
@@ -123,3 +123,4 @@ void cINCUCAI::ResultadoTransplante(bool exito, cReceptor* receptor)
 		receptor->estado = false;
 	}
 }
+

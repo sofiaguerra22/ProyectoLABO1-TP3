@@ -16,7 +16,7 @@ cCentro::~cCentro()
 {
 	if (listaVehiculos != NULL)
 	{
-		for (int i = 0; i < (listaVehiculos->getCA()); i++)
+		for (unsigned int i = 0; i < (listaVehiculos->getCA()); i++)
 		{
 			listaVehiculos[i] = NULL;
 		}
@@ -30,7 +30,7 @@ cVehiculo* cCentro::AsignarVehiculo(cDonante* donante, cReceptor* receptor)//se 
 	{
 		if (donante->getPartido() == receptor->getPartido())
 		{
-			for (int i = 0; i < (listaVehiculos->getCA()); i++)
+			for (unsigned int i = 0; i < (listaVehiculos->getCA()); i++)
 			{
 				if ((*listaVehiculos)[i]->getTipo() == "ambulancia")
 					return (*listaVehiculos)[i];
@@ -38,7 +38,7 @@ cVehiculo* cCentro::AsignarVehiculo(cDonante* donante, cReceptor* receptor)//se 
 		}
 		if (donante->getPartido() != receptor->getPartido())
 		{
-			for (int i = 0; i < (listaVehiculos->getCA()); i++)
+			for (unsigned int i = 0; i < (listaVehiculos->getCA()); i++)
 			{
 				if ((*listaVehiculos)[i]->getTipo() == "helicoptero")
 					return (*listaVehiculos)[i];
@@ -48,7 +48,7 @@ cVehiculo* cCentro::AsignarVehiculo(cDonante* donante, cReceptor* receptor)//se 
 	}
 	else if (donante->getProvincia() != receptor->getProvincia())
 	{
-		for (int i = 0; i < (listaVehiculos->getCA()); i++)
+		for (unsigned int i = 0; i < (listaVehiculos->getCA()); i++)
 		{
 			if ((*listaVehiculos)[i]->getTipo() == "avion")
 				return (*listaVehiculos)[i];

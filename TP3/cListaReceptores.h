@@ -12,12 +12,12 @@ public:
     {
         cListaReceptores* subLista = new cListaReceptores(TMAX);
         cLista<cOrgano>* ListaOrganos = donante->ListaOrganos;
-        int i, j, cont = 0;
+        unsigned int i, j, cont = 0;
         for (i = 0; i < (donante->ListaOrganos->getCA()); i++) //recorre cada órgano del donante
         {
             for (j = 0; j < ca; j++) //ca es la cantidad actual de receptores
             {
-                if ((*ListaOrganos)[i] == lista[j]->getOrgano() && donante->getTipoSangre() == lista[j]->sangre)
+                if ((*ListaOrganos)[i] == lista[j]->getOrgano() && (*lista[j]) == donante)//uso de sobrecarga == para ver si son compatibles
 
                 {
                     cont++;
@@ -25,7 +25,7 @@ public:
                 }
             }
         }
-        for (int i = 0; i < cont; i++)
+        for (unsigned int i = 0; i < cont; i++)
         {
             (*subLista)[i]->donanteAsignado = donante;
         }
@@ -42,7 +42,7 @@ public:
         int counter1 = 0;
         if (lista != NULL)
         {
-            for (int i = 0; i < ca; i++)
+            for (unsigned int i = 0; i < ca; i++)
             {
                 if (lista[i]->prioridad == 3)
                 {
@@ -113,7 +113,7 @@ public:
     void reSetDonanteAsignado(cReceptor* receptor)
     {
         cDonante* donanteaux = receptor->donanteAsignado;
-        for (int i = 0; i < ca; i++)
+        for (unsigned int i = 0; i < ca; i++)
         {
             (*lista)[i].donanteAsignado = NULL;
         }
@@ -121,7 +121,7 @@ public:
     };
     void OrdenarPorFecha()
     {
-        int i, j = 0;
+        unsigned int i, j = 0;
         cReceptor* aux = NULL;
         for (i = 0; i < ca - 1; i++)
         {
@@ -139,6 +139,60 @@ public:
             if (cont == 0)
                 break;
         }
+    };
+    cListaReceptores* BuscarPorOrgano(int numeroOrgano)
+    {
+        cListaReceptores* subLista = new cListaReceptores(ca);
+        for (unsigned int i = 0; i < ca; i++)
+        {
+            subLista[i] = NULL;
+        }
+        for (unsigned int i = 0; i < ca; i++)
+        {
+            if (lista[i]->organo->getNumOrgano() == numeroOrgano)
+            {
+                (*subLista) + lista[i];
+            }
+        }
+        return subLista;
+    };
+    cListaReceptores* BuscarPorCentro(cCentro* centro)
+    {
+        cListaReceptores* subLista = new cListaReceptores(ca);
+        for (unsigned int i = 0; i < ca; i++)
+        {
+            subLista[i] = NULL;
+        }
+        for (unsigned int i = 0; i < ca; i++)
+        {
+            if (lista[i]->centroAsociado == centro)
+            {
+                (*subLista) + lista[i];
+            }
+        }
+        return subLista;
+    };
+    int PrioridadEnLista(cReceptor* receptor)
+    {
+        if (receptor != NULL)
+        {
+            for (unsigned int i = 0; i < ca; i++)
+            {
+                if (lista[i] == receptor)
+                    return lista[i]->prioridad;
+            }
+        }
+    };
+    void ImprimirLista()
+    {
+        for (unsigned int i = 0; i < ca; i++)
+        {
+            lista[i]->ImprimirDatos();
+        }
+    };
+    friend ostream& operator<<(ostream& output, cReceptor& R) {
+        output << " " << R.toString() << endl;
+        return output;
     };
 };
 
