@@ -9,5 +9,7 @@ public:
     cAvion(string _ID);
     ~cAvion();
     string getOnomatopeya() { return onomatopeya; };
+    void ImprimirDatos();
+    string toString();
 };
 

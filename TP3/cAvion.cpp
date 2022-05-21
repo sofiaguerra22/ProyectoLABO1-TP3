@@ -9,3 +9,11 @@ cAvion::cAvion(string _ID):cVehiculo(_ID)
 cAvion::~cAvion()
 {
 }
+void cAvion::ImprimirDatos()
+{
+	cout << this->toString() << endl;
+}
+string cAvion::toString()
+{
+	return "Onomatopeya:" + onomatopeya + "\nTipo de vehiculo: " + tipo;
+}

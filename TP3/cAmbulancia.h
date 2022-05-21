@@ -9,5 +9,7 @@ public:
     cAmbulancia(string _ID);
     ~cAmbulancia();
     string getOnomatopeya() { return onomatopeya; };
+    void ImprimirDatos();
+    string toString();
 };
 

@@ -48,3 +48,11 @@ void cReceptor::setPrioridad()
 		}
 	}
 }
+void cReceptor::ImprimirDatos()
+{
+	cout << this->toString() << endl;
+}
+string cReceptor::toString()
+{
+	return "Patologia:" + to_string(patologia) + "\nPrioridad:" + to_string(prioridad);
+}

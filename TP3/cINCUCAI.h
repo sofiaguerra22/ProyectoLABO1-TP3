@@ -25,6 +25,5 @@ public:
 	cReceptor* ReceptorFinal(cListaReceptores* sublistaReceptores); //LLAMA A PROTOCOLO 
 	bool ProtocoloTransporteTrasplante(cReceptor* receptor);
 	void ResultadoTransplante(bool exito, cReceptor* receptor);
-
 };
 

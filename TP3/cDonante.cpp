@@ -20,7 +20,14 @@ cDonante::~cDonante()
 	fechaComienzoAblacion = NULL;
 	fechaFallecimiento = NULL;
 }
-
+void cDonante::ImprimirDatos()
+{
+	cout << this->toString() << endl;
+}
+string cDonante::toString()
+{
+	return "Cantidad de organos:" + to_string(cantOrganos);
+}
 //void cDonante::setCantOrganos()
 //{
 //	cantOrganos = ListaOrganos->getCA();

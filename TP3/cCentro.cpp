@@ -116,3 +116,11 @@ bool cCentro::RealizarTrasplante(cReceptor* receptor)
 	}
 	return false;
 }
+void cCentro::ImprimirDatos()
+{
+	cout << this->toString() << endl;
+}
+string cCentro::toString() {
+	return "Nombre:" + nombre + "\nDireccion: " + direccion + "\nProvincia: " + provincia + "\nTelefono: " + telefono 
+		+ "\nPartido: " +to_string(partido);
+}

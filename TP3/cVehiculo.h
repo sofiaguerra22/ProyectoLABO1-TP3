@@ -11,5 +11,7 @@ public:
 	cVehiculo(string _ID);
 	virtual ~cVehiculo();
 	string getTipo() { return tipo; };
+	void ImprimirDatos();
+	string toString();
 };
 

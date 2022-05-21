@@ -8,3 +8,11 @@ cVehiculo::cVehiculo(string _ID)
 cVehiculo::~cVehiculo()
 {
 }
+void cVehiculo::ImprimirDatos()
+{
+	cout << this->toString() << endl;
+}
+string cVehiculo::toString()
+{
+	return "ID:" + ID;
+}

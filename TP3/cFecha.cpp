@@ -83,17 +83,16 @@ bool cFecha::FechaCompleta()
 	return false;
 }
 
-//string cFecha::To_string()
-//{
-//	return to_string(fecha.tm_year + 1900) +
-//		"/" + to_string(fecha.tm_mon + 1) +
-//		"/" + to_string(fecha.tm_mday);
-//}
-//
-//void cFecha::ImprimirFecha() {
-//	cout << To_string() << endl;;
-//}
-//
+string cFecha::To_string()
+{
+	return to_string(fecha.tm_year + 1900) + "/" + to_string(fecha.tm_mon + 1) + "/" + to_string(fecha.tm_mday);
+}
+
+void cFecha::ImprimirFecha() 
+{
+	cout << To_string() << endl;;
+}
+
 //bool cFecha::MismoDia(cFecha* fecha1, cFecha* fecha2)
 //{
 //	if (fecha1->fecha.tm_wday == fecha2->fecha.tm_wday)

@@ -19,6 +19,8 @@ public:
     eTipoSangre getTipoSangre() { return sangre; };
     cLista<cOrgano>* getListaOrganos() { return ListaOrganos; };
     cCentro* getCentro() { return centroAsociado; };
+    void ImprimirDatos();
+    string toString();
     //void setCantOrganos();
     };
 

@@ -27,5 +27,7 @@ public:
 	bool RealizarTrasplante(cReceptor* receptor);
 	string getProvincia() { return provincia; };
 	int getPartido() { return partido; };
+	void ImprimirDatos();
+	string toString();
 };
 

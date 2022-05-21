@@ -9,5 +9,7 @@ public:
     cHelicoptero(string _ID);
     ~cHelicoptero();
     string getOnomatopeya() { return onomatopeya; };
+    void ImprimirDatos();
+    string toString();
 };
 

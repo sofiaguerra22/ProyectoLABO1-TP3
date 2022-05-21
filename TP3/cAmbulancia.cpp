@@ -9,3 +9,11 @@ cAmbulancia::cAmbulancia(string _ID):cVehiculo(_ID)
 cAmbulancia::~cAmbulancia()
 {
 }
+void cAmbulancia::ImprimirDatos()
+{
+	cout << this->toString() << endl;
+}
+string cAmbulancia::toString()
+{
+	return "Onomatopeya:" + onomatopeya + "\nTipo de vehiculo: " + tipo;
+}

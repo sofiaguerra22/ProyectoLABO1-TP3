@@ -22,5 +22,7 @@ public:
 	virtual ~cPaciente();
 	string getProvincia() { return centroAsociado->getProvincia(); };
 	int getPartido() { return centroAsociado->getPartido(); };
+	void ImprimirDatos();
+	string toString();
 };
 

@@ -18,3 +18,11 @@ cPaciente::~cPaciente()
 	if (fechaNacimiento != NULL)
 		fechaNacimiento = NULL;
 }
+void cPaciente::ImprimirDatos()
+{
+	cout << this->toString() << endl;
+}
+string cPaciente::toString() 
+{
+	return "DNI: " + nombre + "\nSexo: " + to_string(sexo) + "\nTelefono: " + tel;
+}

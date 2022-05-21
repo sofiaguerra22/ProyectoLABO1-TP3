@@ -19,14 +19,12 @@ private:
 public:
 	//Constructor por default, inicia en la fecha de hoy
 	cFecha();
-
 	//Constructor inicia en dia, mes, año
 	cFecha(int d, int m, int a);
-
 	cFecha(int dia, int mes, int anio, int hora, int minutos);
-
 	~cFecha();
-
+	void ImprimirFecha();
+	string To_string();
 #pragma endregion
 
 #pragma region Metodos

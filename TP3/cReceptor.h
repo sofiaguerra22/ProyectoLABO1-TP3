@@ -23,5 +23,7 @@ public:
     cOrgano* getOrgano() { return organo; };
     cDonante* getDonante() { return donanteAsignado; };
     void setPrioridad(); 
+    void ImprimirDatos();
+    string toString();
 };
 
