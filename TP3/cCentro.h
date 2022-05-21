@@ -3,8 +3,7 @@
 #include <string>
 #include <iostream>
 #include "cLista.h"
-//#include "cDonante.h"
-//#include "cReceptor.h"
+#include "cOrgano.h"
 #include "cAmbulancia.h"
 #include "cHelicoptero.h"
 #include "cAvion.h"
@@ -12,7 +11,6 @@
 using namespace std;
 class cReceptor;
 class cDonante;
-class cOrgano;
 class cCentro
 {
 	string nombre, direccion, provincia, telefono;

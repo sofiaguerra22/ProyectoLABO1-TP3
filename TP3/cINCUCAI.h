@@ -2,12 +2,8 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
-//#include "cLista.h"
 #include "cListaReceptores.h"
 #include "cPaciente.h"
-//#include "cReceptor.h" 
-//#include "cDonante.h"
-//#include "cCentro.h"
 #include <math.h>
 using namespace std;
 class cINCUCAI

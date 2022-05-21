@@ -1,6 +1,5 @@
 #pragma once
 #include "cPaciente.h"
-#include "cLista.h"
 #include <ctime>
 using namespace std;
 class cDonante :

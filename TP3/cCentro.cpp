@@ -1,7 +1,6 @@
 #include "cCentro.h"
 #include "cDonante.h"
 #include"cReceptor.h"
-#include "cOrgano.h"
 
 cCentro::cCentro(string _nombre, string _direccion, string _provincia, string _telefono, int _partido)
 {
@@ -25,7 +24,7 @@ cCentro::~cCentro()
 	}
 }
 
-cVehiculo* cCentro::AsignarVehiculo(cDonante* donante, cReceptor* receptor)
+cVehiculo* cCentro::AsignarVehiculo(cDonante* donante, cReceptor* receptor)//se lo puede cambiar con dynamic cast
 {
 	if (donante->getProvincia() == receptor->getProvincia())
 	{

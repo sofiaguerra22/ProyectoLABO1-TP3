@@ -1,6 +1,5 @@
 #pragma once
-#include "cPaciente.h"
-#include "cLista.h"
+#include "cDonante.h"
 using namespace std;
 class cReceptor :
     public cPaciente

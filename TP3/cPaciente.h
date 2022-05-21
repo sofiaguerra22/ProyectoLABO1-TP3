@@ -1,13 +1,11 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "cOrgano.h"
 #include <ctime>
 #include "Enum.h"
 #include "cCentro.h"
 #include "cFecha.h"
 using namespace std;
-//class cCentro;
 class cPaciente
 {
 protected:
