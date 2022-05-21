@@ -18,8 +18,12 @@ public:
 	void ImprimirPacientes(); //imprime el listado de receptores y donantes
 	T* operator-(T* P); //sobrecarga del operator - para quitar elementos
 	T* operator[](unsigned int i); //se le pasa la posición y devuelve el puntero
-	unsigned int getItemPos(int cod);
+	unsigned int getItemPos(T* P);
 	unsigned int getCA() { return ca; };
+	bool Agregar(T* P);
+	T* Quitar(T* P);
+	bool Eliminar(T* P);
+	T* BuscarenPos(int i);
 	//cLista<T>* getLista() { return lista; };
 	//falta sobrecarga ostream
 
@@ -78,11 +82,10 @@ template<class T>
 template<class T>
  T* cLista<T>::operator-(T* P)
 {
-	T* aux = new T();
+	 T* aux = NULL;
 	aux = P;
-	int cod = P->getCodigo();
-	unsigned int pos = getItemPos(cod);
-	if (cod != -1)
+	int pos = getItemPos(P);
+	if (pos != -1)
 	{
 		ca--;
 		for (unsigned int j = pos; j < ca; j++)
@@ -93,6 +96,7 @@ template<class T>
 		lista[ca] = NULL;
 		return aux;
 	}
+	return NULL;
 }
 
 template<class T>
