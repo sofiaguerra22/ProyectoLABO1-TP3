@@ -21,6 +21,6 @@ public:
     void ImprimirDatos();
     string toString();
     void setListaOrganos(cLista<cOrgano>*_listaOrganos);
-    };
+ };
 
 

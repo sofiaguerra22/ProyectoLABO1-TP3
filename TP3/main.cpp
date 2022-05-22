@@ -8,17 +8,16 @@ using namespace std;
 
 int main()
 {
-	//fechas
+	//FECHAS
 	//nacimientos
 	cFecha* fechanac1 = new cFecha(27, 11, 2002);
 	cFecha* fechanac2 = new cFecha(1, 4, 2002);
 	cFecha* fechanac3 = new cFecha(4, 6, 1996);
 	cFecha* fechanac4 = new cFecha(14, 4, 2006);
-	//ablacion y fallecimiento
+	//fallecimiento
 	cFecha* fechaFall1 = new cFecha(20, 5, 2022);
 	cFecha* fechaFall2 = new cFecha(20, 5, 2022);
-
-
+	
 	//organos
 	cOrgano* organo1 = new cOrgano(eOrgano::corazon);
 	cOrgano* organo2 = new cOrgano(eOrgano::higado);
@@ -35,8 +34,6 @@ int main()
 	//INCUCAI
 	cINCUCAI* INCUCAI = new cINCUCAI();
 
-
-
 	//codigo
 	cPaciente* paciente1 = new cPaciente("Eka", "2222",'f', eTipoSangre::ON, centro1, fechanac1,"123");
 	cout << "" << paciente1->getProvincia() << endl;
@@ -46,10 +43,15 @@ int main()
 	//receptor2->ImprimirDatos();
 	cReceptor* receptor3 = new cReceptor("Juana", "2234", 'f', eTipoSangre::ON, centro2, fechanac4, "4582", false, organo3);//receptor joven e inestable
 	//receptor3->ImprimirDatos();
-	cDonante* donante1 = new cDonante("Juan", "8988", 'm', eTipoSangre::ABN, centro2, fechanac2, "445556",fechaFall1);
+	cDonante* donante1 = new cDonante("Juan", "8988", 'm', eTipoSangre::ABN, centro2, fechanac2, "445556", fechaFall1);//donante compatible con receptor2
 	//le asigno organos que puede donar el donante
 	*listaOrganosDon1 + organo1;
 	*listaOrganosDon1 + organo2;
+	/// <summary>
+	/// Reconocemos que el error esta en setListaOrganos. 
+	/// No logramos hallar la manera que se llene la lista de organos del donante.
+	/// </summary>
+	/// <returns></returns>
 	donante1->setListaOrganos(listaOrganosDon1);
 	donante1->ImprimirDatos();
 

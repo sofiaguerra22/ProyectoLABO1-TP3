@@ -84,12 +84,6 @@ bool cLista<T>::Agregar(T* P)
 }
 
 template<class T>
- void cLista<T>::ImprimirPacientes() //CONSULTAR
-{
-
-}
-
-template<class T>
  T* cLista<T>::operator-(T* P)
 {
 	 T* aux = NULL;
