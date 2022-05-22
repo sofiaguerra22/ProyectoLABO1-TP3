@@ -77,5 +77,6 @@ int main()
 	delete receptor2;
 	delete receptor3;
 	delete donante1;
+	delete listaOrganosDon1;
 	system("pause");
 }
