@@ -39,8 +39,8 @@ bool cINCUCAI::RecibirPaciente(cPaciente* paciente)
 {
 	if (paciente != NULL)
 	{
-		return true;
 		IngresarPaciente(paciente);
+		return true;
 	}
 	return false;
 }
@@ -116,6 +116,7 @@ void cINCUCAI::ResultadoTransplante(bool exito, cReceptor* receptor)
 	if (exito == true)
 	{
 		(*ListaReceptores) - receptor;
+		//cout << "Se completo el trasplante exitosamente!!" << endl;
 	}
 	else if (exito == false)
 	{

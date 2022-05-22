@@ -32,10 +32,10 @@ template<class T>
 {
 	this->ca = 0;
 	this->ct = tam; //cantidad total es igual al tamaño
-
+	lista = new T * [ct];
 	for (unsigned int i = 0; i < ct; i++)
 	{
-		lista[i] = NULL;
+		lista[i] = nullptr;
 	}
 }
 
@@ -64,8 +64,11 @@ template<class T>
 		 }
 	 }
 	 if (i != 0 && i != ca + 1)
+	 {
+		 ca++;
 		 return true;
-	 return false;
+	 }
+	 else return false;
 }
 
 template<class T>

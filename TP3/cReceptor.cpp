@@ -66,11 +66,10 @@ void cReceptor::setPrioridad()
 }
 void cReceptor::ImprimirDatos()
 {
-	cout << this->toString() << endl;
-}
-string cReceptor::toString()
-{
-	return "Patologia:" + to_string(patologia) + "\nPrioridad:" + to_string(prioridad);
+	cout << "Datos Receptor:" << endl;
+	cout << "Nombre paciente:" + nombre + "\nTelefono paciente:" + tel +
+		"\nDNI:" + dni + "\nFecha nacimiento: " + fechaNacimiento->To_string() + "\ntipo sangre:" + TipoSangreToString(sangre) << endl;
+	cout << "Centro Asociado:" + centroAsociado->toString() << endl;
 }
 
 bool cReceptor::operator==(cDonante* donante)

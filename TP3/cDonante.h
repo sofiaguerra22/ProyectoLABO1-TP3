@@ -13,14 +13,14 @@ private:
 public:
     friend class cListaReceptores; //para poder acceder al órgano
     friend class cCentro;
-    cDonante(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento, string _dni, cFecha* _fechaComienzoAblacion, cFecha* _fechaFallecimiento);
+    cDonante(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento, string _dni,cFecha* _fechaFallecimiento);
     ~cDonante();
     eTipoSangre getTipoSangre() { return sangre; };
     cLista<cOrgano>* getListaOrganos() { return ListaOrganos; };
     cCentro* getCentro() { return centroAsociado; };
     void ImprimirDatos();
     string toString();
-    //void setCantOrganos();
+    void setListaOrganos(cLista<cOrgano>*_listaOrganos);
     };
 
 
