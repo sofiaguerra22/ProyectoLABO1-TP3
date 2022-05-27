@@ -58,7 +58,7 @@ public:
 		return aux_this < aux_otra;
 	}
 
-	bool operator>(cFecha& otra) {
+	bool operator>(cFecha& otra) { //faltan if mktime =! a -1 pq cuando devuelve error iguala a -1
 		time_t aux_this = mktime(&(this->fecha));
 		time_t aux_otra = mktime(&(otra.fecha));
 		return aux_this > aux_otra;

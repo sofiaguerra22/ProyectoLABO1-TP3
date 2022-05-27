@@ -1,6 +1,6 @@
 #include "cPaciente.h"
 
-cPaciente::cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento, string _dni)
+cPaciente::cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangre, cCentro* _centroAsociado, cFecha* _fechaNacimiento), dni(_dni) //averiguar que onda
 {
 	this->centroAsociado = _centroAsociado;
 	this->nombre = _nombre;
@@ -8,7 +8,7 @@ cPaciente::cPaciente(string _nombre, string _tel, char _sexo, eTipoSangre _sangr
 	this->sexo = _sexo;
 	this->tel = _tel;
 	this->fechaNacimiento = _fechaNacimiento;
-	this->dni = _dni;
+	//this->dni = _dni;
 }
 
 cPaciente::~cPaciente()

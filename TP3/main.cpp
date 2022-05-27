@@ -1,5 +1,4 @@
 #pragma once
-//#include <string>
 #include <stdio.h>
 #include <iostream>
 #include "cINCUCAI.h"
@@ -14,6 +13,7 @@ int main()
 	cFecha* fechanac2 = new cFecha(1, 4, 2002);
 	cFecha* fechanac3 = new cFecha(4, 6, 1996);
 	cFecha* fechanac4 = new cFecha(14, 4, 2006);
+
 	//fallecimiento
 	cFecha* fechaFall1 = new cFecha(20, 5, 2022);
 	cFecha* fechaFall2 = new cFecha(20, 5, 2022);
@@ -71,6 +71,7 @@ int main()
 	delete fechanac3;
 	delete fechanac4;
 	delete fechaFall1;
+	delete fechaFall2;
 	delete centro1;
 	delete centro2;
 	delete centro3;
